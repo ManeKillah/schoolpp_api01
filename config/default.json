@@ -1,0 +1,59 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "meilisearch": {
+    "url": "https://search.sudapp.co/",
+    "index": "search",
+    "key": "9c70e155c8464ac616dc9262558ed91679d412880296629c23b3ef121647bb92"
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "7m9BQMAHNVCNIfBUkordr/ZQEvU=",
+    "authStrategies": ["jwt", "local", "facebook", "sms", "email", "checkout"],
+    "path": "/authentication",
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "http://localhost:3000/",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1000d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "sms": {
+      "usernameField": "phone",
+      "passwordField": "token_login_phone"
+    },
+    "email": {
+      "usernameField": "email",
+      "passwordField": "token_login_email"
+    },
+    "checkout": {
+      "usernameField": "email",
+      "passwordField": "ignore"
+    },
+    "oauth": {
+      "facebook": {
+        "key": "1494933113998086",
+        "secret": "b11301d5f01e8203661b1a48df57befe",
+        "scope": ["email, public_profile"]
+      }
+    }
+  },
+
+  "mysql": {
+    "client": "mysql",
+    "_connection": "mysql://schoolpp:j^I2q43l5@localhost:3306/schoolpp-db",
+    "connection": "mysql://root:@localhost:3306/schoolpp-db"
+  }
+}

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3030:3030"
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: production
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: schoolpp-db
+      MYSQL_USER: schoolpp
+      MYSQL_PASSWORD: j^I2q43l5
